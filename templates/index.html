@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maternal Health Risk Prediction</title>
+</head>
+<body>
+    <h1>Submit Your Data</h1>
+    <form action="/predict" method="post">
+        <label for="age">Age:</label>
+        <input type="text" id="age" name="age" required><br><br>
+        
+        <label for="systolicbp">Systolic BP:</label>
+        <input type="text" id="systolicbp" name="systolicbp" required><br><br>
+        
+        <label for="diastolicbp">Diastolic BP:</label>
+        <input type="text" id="diastolicbp" name="diastolicbp" required><br><br>
+        
+        <label for="bs">Blood Sugar (BS):</label>
+        <input type="text" id="bs" name="bs" step="0.01" required><br><br>
+        
+        <label for="bodytemp">Body Temperature:</label>
+        <input type="text" id="bodytemp" name="bodytemp" required><br><br>
+        
+        <label for="heartrate">Heart Rate:</label>
+        <input type="text" id="heartrate" name="heartrate" required><br><br>
+        
+        <input type="submit" value="predict">
+    </form>
+
+    {% if prediction %}
+        <h2>Prediction: {{ prediction }}</h2>
+    {% elif error %}
+        <h2>Error: {{ error }}</h2>
+    {% endif %}
+</body>
+</html>
