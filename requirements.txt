@@ -1,7 +1,7 @@
 Flask
-scikit-learn
+scikit-learn==1.5.1
 numpy
 pandas
 gunicorn
-xgboost
+xgboost==2.1.1
 ucimlrepo
